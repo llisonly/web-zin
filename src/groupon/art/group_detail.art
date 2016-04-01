@@ -1,0 +1,135 @@
+<div class="detail-tips">{{info.status_message}}</div>
+        <div class="goods-info" goods-id="{{info.goods_id}}">
+            <div class="goods-img">
+            {{if aUrl = ('/src/groupon/goods_detail.html?goods_id='+info.goods_id +'&groupon_rule_id='+info.groupon_rule_id)}}{{/if}}
+                <a href="{{aUrl | urlFn}}" class="block">
+                    <img src="{{info.goods_image}}"  data-share-image="{{info.goods_image}}" alt="{{info.goods_name}}"/>
+                    <div class="corner-right">
+                        <p class="p1">{{info.discount_rate}}折</p>
+                        <p class="p2">{{info.min_number}}人成团</p>
+                    </div>
+                </a>
+            </div>
+            <div class="goods-text">
+                <h2>{{info.goods_prefix}}{{info.goods_name}}</h2>
+                <div class="text">
+                   {{info.min_number}}人抱团价：<span class="c-red fs22"> <i class="icon-price"></i>{{info.groupon_price}}</span>
+                </div>
+                {{if info.groupon_status == 1}}
+                <div class="down-time">
+                    <div class="content" id="down-times" style="display:none;" time-end="{{info.groupon_end_time}}" time-cur="{{info.current_time}}">
+                        <span>剩余</span>
+                        <em class="em">${h}</em>
+                        <em>:</em>
+                        <em class="em">${m}</em>
+                        <em>:</em>
+                        <em class="em">${s}</em>
+                        <span>结束</span>
+                    </div>
+                </div>
+                <div class="headcount">
+                    <ul>
+                    {{#info.min_number | toHeadcount:info.joined_number}}
+                    </ul>
+                    <div class="head-number">还差<span class="c-red">{{info.min_number-info.joined_number}}</span>人</div>
+                </div>
+                {{/if}}
+                {{if info.groupon_status == 1}}
+                    <div class="corner-group"></div>
+                {{/if}}
+                {{if info.groupon_status == 2}}
+                    <div class="corner-group corner-group-sec"></div>
+                {{/if}}
+                {{if info.groupon_status == 3}}
+                    <div class="corner-group corner-group-fail"></div>
+                {{/if}}
+            </div>
+        </div>
+        <section class="detiled-body">
+            <div class="title">
+                <div class="more">
+                    <a href="./help.html">
+                        <i class="arrow-right"></i>
+                        查看详情
+                    </a>
+                </div>
+                    <label for="">抱团流程</label>
+                </div>
+            <div class="groun_step groun_step01">
+                <ul>
+                    <li class="li-ed">
+                        <div class="left"><span>1</span></div>
+                        <div class="right">选择<br>心仪商品</div>
+                    </li>
+                    <li class="even li-ed">
+                        <div class="left"><span>2</span></div>
+                        <div class="right">支付开团<br>或抱团</div>
+                    </li>
+                    <li class="{{if info.groupon_status==1}}li-cur{{else}}li-ed{{/if}}">
+                        <div class="left"><span>3</span></div>
+                        <div class="right">等待好友<br>抱团支付</div>
+                    </li>
+                    <li class="even {{if info.groupon_status==2 || info.groupon_status==3}}li-cur{{/if}}">
+                        <div class="left"><span>4</span></div>
+                        {{if info.groupon_status==2}}
+                            <div class="right">达到人数<br>抱团成功</div>
+                        {{else}}
+                            <div class="right">人数不够<br>抱团失败</div>
+                        {{/if}}
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        {{if info.other_groupon_rule && info.other_groupon_rule.length > 0}}
+        <section class="detiled-body">
+            <div class="title">
+                <div class="more">
+                    <a href="{{'/src/groupon/group.html' | urlFn}}">
+                        <i class="arrow-right"></i>
+                        更多
+                    </a>
+                </div>
+                <label for="">其他团购</label>
+            </div>
+            <div class="con de-goods">
+                <ul>
+                    {{each info.other_groupon_rule as item}}
+                    <li goods-id="{{item.goods_id}}" groupon-rule-id="{{item.groupon_rule_id}}">
+                        {{if aUrl = ('/src/groupon/goods_detail.html?goods_id='+item.goods_id +'&groupon_rule_id='+item.groupon_rule_id)}}{{/if}}
+                        <a href="{{aUrl | urlFn}}" class="block">
+                        <div class="image">
+                            <img src="{{item.goods_image}}" alt="{{item.goods_name}}"/>
+                            <p class="tip">{{item.min_number}}人抱团价 <span class="fs24">{{item.groupon_price}}</span>元</p>
+                        </div>
+                        <div class="name">{{item.goods_prefix}}{{item.goods_name}}</div>
+                        </a>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </section>
+        {{/if}}
+        <div class="fixed-button">
+            {{if info.groupon_status == 3 || info.statusCode == 2}}
+                <div class="w50">
+                    <a href="{{'/src/groupon/my_list.html' | urlFn}}" class="click-one" id="my-list">我的抱抱团</a>
+                </div>
+                {{if aUrl = ('/src/groupon/goods_detail.html?goods_id='+info.goods_id +'&groupon_rule_id='+info.groupon_rule_id)}}{{/if}}
+                <div class="w50">
+                    <a href="{{aUrl | urlFn}}" class="click-two">重新开团</a>
+                </div>
+            {{else if info.has_button == 1}}
+                <div class="w50">
+                    <a href="{{"/src/groupon/my_list.html" | urlFn}}" class="click-two" id="my-list">我的抱抱团</a>
+                </div>
+                <div class="w50">
+                    <a href="{{"/src/groupon/order.html" | urlFn}}" class="click-one" id="destination" data-id="{{info.destination}}">{{info.operate_message}}</a>
+                </div>
+            {{else}}
+                <div class="w100">
+                    <a href="{{'/src/groupon/my_list.html' | urlFn}}" class="click-one" id="my-list">我的抱抱团</a>
+                </div>
+            {{/if}}
+        </div>
+        <div class="fixed-button-block"></div>

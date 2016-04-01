@@ -1,0 +1,74 @@
+<form action="" class="form-data" user_name="{{info.user_name}}" user_id="{{info.id}}">
+    <ul class="form-data-ul" >
+    <!-- {{address = info.address}} -->
+        <li><input type="text" placeholder="收件人姓名" submit-type='consignee' value="{{address.consignee}}"> </li>
+        <li><input type="tel" placeholder="收件人手机号码" maxLength="12" submit-type="phone_mob" value="{{address.phone_mob}}"> </li>
+        <li data-city="showcity" region_id="{{address.region_id}}" region_name="{{address.region_name}}">
+            <select name="" id="" data-name="province">
+                <option value="请选择">请选择</option>
+            </select>
+            <select name="" id="" data-name="city">
+                <option value="请选择">请选择</option>
+            </select>
+            <select name="" id=""  data-name="area">
+                <option value="请选择">请选择</option>
+            </select>
+        </li>
+        <li><input type="text" placeholder="详细街道地址" submit-type="address" value="{{address.address}}"> </li>
+    </ul>
+</form>
+<div class="group-detail">
+    <div class="title-h3">
+        选择商品
+    </div>
+    <ul class="goods-de">
+        {{each info.goods as item}}
+        <li goods-id="{{item.goods_id}}">
+            <div class="image">
+                <img src="{{item.goodsImage}}" alt="{{item.goods_name}}"/>
+            </div>
+            <div class="goods-infe">
+                <p class="name">{{item.prefix}}{{item.goods_name}}</p>
+                <p class="ml"><!--350ml--> &nbsp;</p>
+                <p class="num">X1<span class="cRed fr"><i class="icon-price"></i>{{item.price}}</span></p>
+
+            </div>
+        </li>
+        {{/each}}
+    </ul>
+    <div class="fastmail">
+        {{if info.express_list && info.express_list.last_express_info}}
+            <label for="">{{info.express_list.last_express_info.name}}</label>
+            <span class="price cRed fr"><i class="icon-price"></i>{{info.express_list.last_express_info.freight}}</span>
+        {{else}}
+            <label for="">快递费用</label>
+            <span class="price cRed fr"><i class="icon-price"></i>{{info.order_amount | postage}}</span>
+        {{/if}}
+    </div>
+</div>
+<div class="pay-select">
+    <div class="title-h3">
+        选择支付方式
+    </div>
+    <div class="ul-list">
+        <ul>
+            {{each info.payment_list as item index}}
+            <li>
+                <label for="pay0{{index}}"><input id="pay0{{index}}" type="radio" name="payselect" value="{{item.payment_code}}" ukey="{{item.ukey}}" {{if index==0}}checked{{/if}} /><i class="icon-radio"></i>
+                <div class="text">
+                    <i class="icon-pay icon-pay-ali icon-{{item.ukey}}"></i>
+                    <p class="h3">{{item.title}}</p>
+                    <p class="tips">{{item.desc}}</p>
+                </div>
+                </label>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>
+<div class="order-button-wrap">
+    <div class="order-button-box">
+        <a href="{{'/src/groupon/success.html' | urlFn}}" class="order-btn">确定并付款</a>
+        <div class="text">应付金额： <span class="cRed"><i class="icon-price"></i>{{info.order_amount}}</span></div>
+    </div>
+</div>

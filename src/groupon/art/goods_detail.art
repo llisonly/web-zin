@@ -1,0 +1,103 @@
+{{if item = info}}
+<div class="goods-info">
+    <div class="goods-img">
+        <img src="{{item.goods_image}}" data-share-image="{{item.goods_image}}" alt="{{item.goods_name}}"/>
+        <div class="corner-right">
+            <p class="p1">{{item.discount_rate}}折</p>
+            <p class="p2">{{item.min_number}}人成团</p>
+        </div>
+    </div>
+    <div class="goods-text">
+        <h2>{{item.prefix}}{{item.goods_name}}</h2>
+        <div class="text">
+            支付并邀请{{item.min_number-1}}人抱团，人数不足自动退款 <span class="inline-help" style="display:none;"></span>
+        </div>
+        <div class="group-box">
+            <div class="group-info-btn">
+                <div class="left"><span class="c-red">{{item.min_number}}人抱团价</span></div>
+                <div class="right"><i class="icon-price"></i>{{item.groupon_price}}</div>
+            </div>
+            <div class="del-price">单独购买价 <del>{{item.price}}元</del></div>
+        </div>
+    </div>
+    <div class="groun_step groun_step01">
+        <ul>
+            <li class="li-cur">
+                <div class="left"><span>1</span></div>
+                <div class="right">选择<br>心仪商品</div>
+            </li>
+            <li class="even " li-ed>
+                <div class="left"><span>2</span></div>
+                <div class="right">支付开团<br>或抱团</div>
+            </li>
+            <li>
+                <div class="left"><span>3</span></div>
+                <div class="right">等待好友<br>抱团支付</div>
+            </li>
+            <li class="even">
+                <div class="left"><span>4</span></div>
+                <div class="right">达到人数<br>抱团成功</div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<section class="detil-body box-con">
+    <div class="head">
+        <label>商品详情</label>
+    </div>
+    <div class="body">
+        <p>{{item.shows_txt}}</p>
+        <p style="display:;">{{item.description}}</p>
+        {{if item.shows_list && item.shows_list.length > 0}}
+        <div class="img-ul" style="display:;">
+            <ul>
+                {{each item.shows_list as images}}
+                <li>
+                    <div class="img-box"><img src="{{images.image}}" alt=""/></div>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+        {{/if}}
+    </div>
+
+</section>
+
+<section class="rule box-con">
+            <div class="head">
+                <label>活动规则</label>
+            </div>
+            <div class="body">
+                <ol class="ol-numbe">
+                    <li> 开团：点右下角开团求抱，支付完成后，即开团成功。</li>
+                    <li> 参团：将团购分享给好友，好友支付完成后，即参团成功。</li>
+                    <li> 发货：团购成功后的24小时内发货，并短信通知用户。</li>
+                     <li> 规则：每位用户可以开两个团；在达令下过订单的用户不可以参团。</li>
+                </ol>
+            </div>
+
+        </section>
+        <div class="fixed-button" id="btn-my-group">
+            <div class="w50">
+                <a href="{{"/src/groupon/my_list.html" | urlFn}}" class="click-two" id="my-list">我的抱抱团</a>
+            </div>
+            {{if isInApp}}
+                <div class="w50">
+                    {{if urlStr='/src/groupon/order.html?groupon_rule_id=' + info.groupon_rule_id + '&goods_ids=' + info.goods_id}}{{/if}}
+                    {{if urlStr='orderconfirm://?goodsid=' + info.goods_id + '&groupon_rule_id=' + info.groupon_rule_id + '&order_from=groupon'}}{{/if}}
+                    {{if info.goods_stock <= 0}}
+                        <a href="javascript:;" class="click-one gray" id="" data-login="{{isInApp}}">抢光了</a>
+                    {{else}}
+                        <a href="{{urlStr}}" class="click-one" id="order-btn" data-login="{{isInApp}}"><i class="icon-price"></i>{{item.groupon_price}}  开团求抱</a>
+                    {{/if}}
+
+                </div>
+            {{else}}
+                <div class="w50">
+                    <a href="http://m.daling.com" class="click-one" id="downloadApp"><i class="icon-price"></i>{{item.groupon_price}}  开团求抱</a>
+                </div>
+            {{/if}}
+        </div>
+        <div class="fixed-button-block"></div>
+{{/if}}

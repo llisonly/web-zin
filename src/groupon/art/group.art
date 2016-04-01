@@ -1,0 +1,84 @@
+<div class="banner">
+    <div class="img"></div>
+    <!--<div class="banner-tips">-->
+        <!--<div class="con">-->
+            <!--<p class="p1">达令新玩法</p>-->
+            <!--<p class="p2">达令新玩法</p>-->
+            <!--<p class="p3"><span class="click">抱团玩法</span></p>-->
+        <!--</div>-->
+    <!--</div>-->
+</div>
+<div class="groun_step">
+    <ul>
+        <li>
+            <div class="left"><span>1</span></div>
+            <div class="right">选择<br>心仪商品</div>
+        </li>
+        <li class="even">
+            <div class="left"><span>2</span></div>
+            <div class="right">支付开团<br>或抱团</div>
+        </li>
+        <li>
+            <div class="left"><span>3</span></div>
+            <div class="right">等待好友<br>抱团支付</div>
+        </li>
+        <li class="even">
+            <div class="left"><span>4</span></div>
+            <div class="right">达到人数<br>抱团成功</div>
+        </li>
+    </ul>
+</div>
+<div class="goods-list" id="goods-list">
+
+
+    {{each info as item}}
+    {{if isItem=1}}{{/if}}
+    {{if aUrl = ('/src/groupon/goods_detail.html?goods_id='+item.goods_id +'&groupon_rule_id='+item.groupon_rule_id)}}{{/if}}
+
+    <div class="goods-info" group-id="{{item.groupon_rule_id}}">
+        {{if item.can_create || 1}}
+            <a href="{{aUrl | urlFn}}" class="goods-img" goods-id={{item.goods_id}}>
+        {{else}}
+            <div class="goods-img">
+        {{/if}}
+                <img src="{{item.goods_image}}" alt=""/>
+                <div class="corner-right">
+                    <p class="p1">{{item.discount_rate}}折</p>
+                    <p class="p2">{{item.min_number}}人成团</p>
+                </div>
+
+        {{if item.can_create || 1}}
+             </a>
+        {{else}}
+            </div>
+        {{/if}}
+        <a href="{{aUrl | urlFn}}" class="goods-text">
+            <h2>{{item.goods_prefix}}{{item.goods_name}}</h2>
+            <div class="text">
+                {{slice(item.description,0)}}
+            </div>
+            <div class="group-box">
+                <div class="group-info-btn {{if item.can_create == false}}gray{{/if}}">
+                    <div class="left">{{item.min_number}}人抱团价<span class="c-red">{{item.groupon_price}}</span>元</div>
+                    {{if item.can_create == false}}
+                        <div class="right ">抢光了</div>
+                    {{else}}
+                        <div href="{{aUrl | urlFn}}" goods-id={{item.goods_id}} class="right">开团求抱</div>
+                    {{/if}}
+                </div>
+            </div>
+        </a>
+    </div>
+    {{/each}}
+    {{if !isItem}}
+        <div>暂时没有数据</div>
+    {{/if}}
+
+</div>
+
+<div class="fixed-button">
+    <div class="w100" id="btn-my-group" style="">
+        <a href="{{"/src/groupon/my_list.html" | urlFn}}" class="click-one">我的抱抱团</a>
+    </div>
+</div>
+<div class="fixed-button-block"></div>

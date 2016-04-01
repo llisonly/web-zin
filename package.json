@@ -1,0 +1,35 @@
+{
+  "name": "@dal/web-zin",
+  "version": "1.2.6",
+  "description": "H5 版本的社区前端项目",
+  "main": "index.js",
+  "scripts": {
+    "release": "devagent package"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.corp.daling.com:dal_fe/web_zin.git"
+  },
+  "publishConfig": {
+    "registry": "http://npm-registry.corp.daling.com"
+  },
+  "author": "guoyu@daling.com",
+  "license": "ISC",
+  "dependencies": {
+    "@dal/web-env": "1.1.10",
+    "@dal/web-widgets": "1.1.33",
+    "art-template": "^3.0.3",
+    "jquery": "2.1.4",
+    "js-base64": "^2.1.9"
+  },
+  "package": {
+    "assets": "http://img.cdn.daling.com/assets/",
+    "vendors": [
+      "@dal/web-env",
+      "@dal/web-widgets",
+      "art-template/dist/template",
+      "jquery",
+      "js-base64"
+    ]
+  }
+}

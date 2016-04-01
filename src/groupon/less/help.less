@@ -1,0 +1,78 @@
+@color_red:#f36;
+.main{
+    line-height: 1.6em;
+    font-size:14px;
+}
+.content{
+    padding:20px;
+    position:relative;
+    &:before{
+        content:" ";
+        position:absolute;
+        left:14px;
+        top:0;
+        bottom:0;
+        border-left:.04rem solid @color_red;
+    }
+    .title{
+        color:@color_red;
+        font-size: 18px;
+        line-height: 1.6em;
+        &:before{
+            float: left;
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-radius: 100%;
+            top: 9px;
+            position: relative;
+            left: -9px;
+            background:@color_red;
+        }
+    }
+    .con{
+        padding: .1rem 0 .1rem .1rem;
+        div[class^="img"]{
+            margin-bottom:.1rem;
+        }
+        .img1{
+            display: block;
+            height:2.4rem;
+            background:url(../images/help/1.png) no-repeat center center;
+            background-size: 100% 100%;
+        }
+        .img2{
+            display: block;
+            height:2.1rem;
+            background:url(../images/help/2.png) no-repeat center center;
+            background-size: 100% 100%;
+        }
+        .img3{
+            display: block;
+            height:2.2rem;
+            background:url(../images/help/3.png) no-repeat center center;
+            background-size: 100% 100%;
+        }
+        .img4{
+            display: block;
+            height:2.2rem;
+            background:url(../images/help/4.png) no-repeat center center;
+            background-size: 100% 100%;
+        }
+        .img5{
+            display: block;
+            height:2.18rem;
+            background:url(../images/help/5.png) no-repeat center center;
+            background-size: 100% 100%;
+        }
+    }
+}
+
+.con-bottom{
+    border-top:1px solid #ccc;
+    background:#fff;
+    padding:.2rem;
+    p{
+        margin-bottom:.1rem;
+    }
+}

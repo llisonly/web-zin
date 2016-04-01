@@ -1,0 +1,179 @@
+body {
+  background: #fff;
+}
+.order-box {
+  background: #fff;
+}
+.order-box .form-data-ul {
+  padding-left: .2rem;
+}
+.order-box .form-data-ul li {
+  border-bottom: .01rem solid #efefef;
+  padding: .12rem 0;
+}
+.order-box .form-data-ul input[type=text],
+.order-box .form-data-ul input[type=tel],
+.order-box .form-data-ul input[data-type=text] {
+  height: .44rem;
+  width: 100%;
+  border: 0 none;
+}
+.order-box .form-data-ul select {
+  border: .01rem solid #ddd;
+  height: .44rem;
+  max-width: 2rem;
+}
+.order-box .title-h3 {
+  background: #f6f5f7;
+  font-size: .22rem;
+  padding: .1rem .2rem;
+  line-height: .4rem;
+}
+.order-box .goods-de {
+  padding-left: .2rem;
+}
+.order-box .goods-de li {
+  font-size: .22rem;
+  line-height: .32rem;
+  padding: .1rem .2rem .1rem 0;
+  border-bottom: 1px solid #efefef;
+}
+.order-box .goods-de li:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.order-box .goods-de .image {
+  float: left;
+  width: .92rem;
+  height: .92rem;
+}
+.order-box .goods-de .image img {
+  width: 100%;
+  height: 100%;
+}
+.order-box .goods-de .goods-infe {
+  padding-left: 1.02rem;
+}
+.order-box .goods-de .goods-infe .name {
+  color: #39383b;
+}
+.order-box .fastmail {
+  font-size: .22rem;
+  padding: .2rem;
+  line-height: .3rem;
+}
+.order-box .pay-select .title-top {
+  background: #fff;
+}
+.order-box .pay-select .ul-list {
+  padding-left: .20rem;
+}
+.order-box .pay-select .ul-list li {
+  padding: .14rem 0;
+  height: .76rem;
+  border-bottom: 1px solid #efefef;
+  box-sizing: border-box;
+}
+.order-box .pay-select .ul-list li label {
+  display: block;
+}
+.order-box .pay-select .ul-list li label input[type=radio] {
+  display: none;
+}
+.order-box .pay-select .ul-list li label .icon-radio {
+  float: left;
+  margin-top: .1rem;
+  height: .3rem;
+  width: .32rem;
+  background: url("../images/icon/icon-radio.png") no-repeat center center;
+  background-size: 98% 100%;
+}
+.order-box .pay-select .ul-list li label input:checked + i.icon-radio {
+  background-image: url("../images/icon/icon-radioed.png");
+}
+.order-box .pay-select .ul-list li label:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.order-box .pay-select .ul-list li label .text {
+  overflow: hidden;
+  padding-left: .14rem;
+}
+.order-box .pay-select .ul-list li label .text p {
+  padding-left: .56rem;
+}
+.order-box .pay-select .ul-list li label .text .h3 {
+  font-size: .22rem;
+  color: #39383b;
+}
+.order-box .pay-select .ul-list li label .text .tips {
+  font-size: .19rem;
+}
+.order-box .pay-select .ul-list li label .icon-pay {
+  float: left;
+  height: .48rem;
+  width: .48rem;
+  background: no-repeat center center;
+  background-size: 100% 100%;
+}
+.order-box .pay-select .ul-list li label .icon-pay-ali,
+.order-box .pay-select .ul-list li label .icon-appalipay {
+  background-image: url("../images/icon/ali.png");
+}
+.order-box .pay-select .ul-list li label .icon-pay-wx,
+.order-box .pay-select .ul-list li label .icon-wxpay {
+  background-image: url("../images/icon/weixin.png");
+}
+.order-box .pay-select .ul-list li label .icon-pay-caifu,
+.order-box .pay-select .ul-list li label .icon-tenpay {
+  background-image: url("../images/icon/caifu.png");
+}
+.order-box .pay-select .ul-list li label .icon-pay-nongye,
+.order-box .pay-select .ul-list li label .icon-abcpay {
+  background-image: url("../images/icon/nongye.png");
+}
+.order-box .pay-select .ul-list li label .icon-pay-yinlian,
+.order-box .pay-select .ul-list li label .icon-unipay {
+  background-image: url("../images/icon/yinlian.png");
+}
+.order-box .pay-select .ul-list li label .icon-pay-xinyongka,
+.order-box .pay-select .ul-list li label .icon-tenpay_credit {
+  background-image: url("../images/icon/xinyonka.png");
+}
+.order-button-wrap {
+  height: .78rem;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  border-top: 1px solid #e5e5e5;
+  margin-top: .12rem;
+}
+.order-button-wrap .order-button-box {
+  box-sizing: border-box;
+  height: .78rem;
+  max-width: 640px;
+  margin: 0 auto;
+}
+.order-button-wrap .order-button-box .text {
+  padding: .2rem;
+  font-size: .2rem;
+  line-height: .36rem;
+}
+.order-button-wrap .order-button-box .text .cRed {
+  font-size: .26rem;
+}
+.order-button-wrap .order-button-box .button {
+  height: 100%;
+}
+.order-button-wrap .order-button-box .order-btn {
+  box-sizing: border-box;
+  height: .78rem;
+  float: right;
+  padding: 0 .2rem;
+  background: #af5bbf;
+  font-size: .26rem;
+  line-height: .78rem;
+  color: #fff;
+}

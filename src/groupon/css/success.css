@@ -1,0 +1,92 @@
+html body {
+  background: #fff;
+}
+.success {
+  background: #fff;
+}
+.success .goods-info {
+  padding-top: .78rem;
+}
+.success .goods-info .img {
+  margin: 0 auto .4rem;
+  width: 2.58rem;
+  height: 2.58rem;
+  border: 1px solid #999;
+}
+.success .goods-info .img img {
+  height: 100%;
+  width: 100%;
+}
+.success .goods-info .text {
+  font-size: .22rem;
+  padding-left: 1.3rem;
+  line-height: 1.6em;
+  margin-bottom: 0.5rem;
+}
+.success .goods-info .text label {
+  margin-right: .1rem;
+}
+.success .goods-info .text span {
+  color: #39383b;
+}
+.success .done-step {
+  margin: 0 auto;
+  width: 4.76rem;
+  position: relative;
+  height: 1.5rem;
+  border: 1px solid transparent;
+}
+.success .done-step li {
+  float: left;
+  position: absolute;
+  top: 0;
+}
+.success .done-step li.one {
+  left: 0;
+}
+.success .done-step li.two {
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+.success .done-step li.three {
+  right: 0;
+}
+.success .done-step .step-num {
+  width: .42rem;
+  height: .42rem;
+  background: #d13d4b;
+  border-radius: .42rem;
+}
+.success .done-step .step-num span {
+  display: block;
+  height: 80%;
+  width: 80%;
+  margin: 10%;
+  background: #ab0f16;
+  text-align: center;
+  line-height: .33rem;
+  float: left;
+  border-radius: .42rem;
+  font-size: .22rem;
+  color: #fff;
+}
+.success .done-step .step-text {
+  position: absolute;
+  top: .5rem;
+  left: 50%;
+  width: 1.5rem;
+  text-align: center;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+.success .done-step .line {
+  margin: 0.18rem auto;
+  width: 4.26rem;
+  height: 0.02rem;
+  background: #d13d4b;
+  border: .02rem solid #ab0f16;
+}
+.success .step-text {
+  clear: both;
+}

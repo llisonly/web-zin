@@ -1,0 +1,90 @@
+html body{
+    background:#fff;
+}
+.success{
+    background:#fff;
+    .goods-info{
+        padding-top:.78rem;
+        .img{
+            margin:0 auto .4rem;
+            width:2.58rem;
+            height:2.58rem;
+            border:1px solid #999;
+            img{
+                height:100%;
+                width:100%;
+            }
+        }
+        .text{
+            font-size: .22rem;;
+            padding-left:1.3rem;
+            line-height: 1.6em;;
+            margin-bottom:0.5rem;
+            label{
+                margin-right:.1rem;
+            }
+            span{
+                color:#39383b;
+            }
+        }
+    }
+    .done-step{
+        margin:0 auto;
+        width:4.76rem;
+        position: relative;
+        height: 1.5rem;
+        border: 1px solid transparent;
+        li{
+            float:left;
+            position: absolute;
+            top: 0;;
+            &.one{
+                left:0;
+            }
+            &.two{
+            left:50%;
+                transform: translate(-50%,0);
+            }
+            &.three{
+                right:0;
+            }
+        }
+        .step-num{
+            width:.42rem;
+            height:.42rem;
+            background:#d13d4b;
+            border-radius: .42rem;
+            span{
+                display: block;
+                height:80%;
+                width:80%;
+                margin:10%;
+                background:#ab0f16;
+                text-align: center;
+                line-height: .33rem;
+                float: left;
+                border-radius: .42rem;
+                font-size:.22rem;
+                color:#fff;
+            }
+        }
+        .step-text{
+            position:absolute;
+            top:.5rem;
+            left:50%;
+            width: 1.5rem;
+            text-align: center;
+            transform: translate( -50% , 0);
+        }
+        .line{
+          margin: 0.18rem auto;
+          width:4.26rem;
+          height:0.02rem;
+          background:#d13d4b;
+          border:.02rem solid #ab0f16;
+        }
+    }
+    .step-text{
+        clear: both;
+    }
+}

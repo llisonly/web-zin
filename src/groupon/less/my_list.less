@@ -1,0 +1,83 @@
+.my-list-box{
+    .my-list{
+        padding-left:.2rem;
+        li{
+            padding:.2rem;
+            padding-left:0;
+            border-bottom:1px solid #e5e5e5;
+            position:relative;
+            &:after{
+                content:"";
+                clear:both;
+                display:table;
+            }
+            .image{
+                float:left;
+                width:1.86rem;
+                height:1.86rem;
+                img{
+                    width:100%;
+                    height:100%;
+                }
+            }
+            .info{
+                padding-left:2.06rem;
+                .name{
+                    font-size: .24rem;
+                    font-weight: 300;
+                    height:.84rem;
+                    overflow:hidden;
+                }
+                .number{
+                    font-size: .18rem;
+                    height:.58rem;
+                    .cRed{
+                        font-size: .24rem;
+                    }
+                }
+                .click-btn{
+                    display: inline-block;
+                    padding:0 .12rem;
+                    line-height:.36rem;
+                    font-size: .216rem;
+                    color:#d13d4b;
+                    border:1px solid #d13d4b;
+                }
+            }
+            .corner-group{
+                position: absolute;
+                right: .3rem;
+                top: .76rem;
+                width: 1.32rem;
+                height: 1.22rem;
+                background: url("../images/icon/grouping.png");
+                background-size: 100% 100%;
+            }
+            .corner-group-sec{
+                background-image:url("../images/icon/grouped_01.png");
+                width: 1.36rem;
+            }
+            .corner-group-fail{
+                background-image:url("../images/icon/grouped_02.png");
+                width: 1.34rem;
+            }
+        }
+    }
+    .my-list-no{
+        padding-top:1.79rem;
+        text-align: center;
+        font-size:.26rem;
+        line-height: .4rem;
+        .top{
+            margin-bottom:.2rem;
+        }
+    }
+    .btn-return{
+        display: inline-block;
+        padding:0 .22rem;
+        line-height:.55rem;
+        font-size: .26rem;
+        color:#858385;
+        border:1px solid #858385;
+    }
+}

@@ -1,0 +1,43 @@
+<div class="goods-info">
+    <div class="img">
+        <a href="{{'/src/groupon/goods_detail.html?'}}">
+            <img src="{{info.goods_image}}" alt="{{info.goods_name}}"/>
+        </a>
+    </div>
+    <div class="text">
+        <ul>
+            <li><label for="">订单编号</label><span>{{info.order_sn}}</span></li>
+            <li><label for="">订单商品</label><span>{{info.goods_name}}</span></li>
+            <li><label for="">订单价格</label><span><i class="icon-price"></i>{{info.order_amount}}</span></li>
+        </ul>
+    </div>
+    <div class="done-step">
+        <div class="line"></div>
+        <ul>
+            <li class="one">
+                <div class="step-num"><span>1</span></div>
+                <div class="step-text">
+                    下载并安装 <br>达令App
+                </div>
+            </li>
+            <li class="two">
+                <div class="step-num"><span>2</span></div>
+                <div class="step-text">
+                    打开达令App <br>进入我的订单
+                </div>
+            </li>
+            <li class="three">
+                <div class="step-num"><span>3</span></div>
+                <div class="step-text">
+                    支付该订单 <br>参团成功
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="fixed-button">
+    <div class="w100">
+        <a href="http://m.daling.com/" class="click-one" id="down-app">下载达令，发誓把团购搞到手</a>
+    </div>
+</div>
+<div class="fixed-button-block"></div>

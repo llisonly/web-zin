@@ -1,0 +1,38 @@
+{{if info && info.length > 0}}
+<ul class="my-list">
+    {{each info as item}}
+    {{if aUrl = ('/src/groupon/goods_detail.html?goods_id='+item.goods_id +'&groupon_rule_id='+item.groupon_rule_id)}}{{/if}}
+    <li>
+        <div class="image">
+            <a href="{{aUrl | urlFn}}">
+                <img src="{{item.goods_image}}" alt=""/>
+            </a>
+        </div>
+        <div class="info">
+            <h4 class="name"><a href="{{aUrl | urlFn}}">{{item.prefix}}{{item.goods_name}}</a></h4>
+            <p class="number">{{item.min_number}}人抱团价 <span class="cRed">{{item.groupon_price}}</span>元</p>
+            <p class="btn-obx">
+                {{if aUrl = ('/src/groupon/group_detail.html?groupon_id='+item.groupon_id +'&groupon_rule_id='+item.groupon_rule_id)}}{{/if}}
+                <a href="{{aUrl | urlFn}}" groupon_rule_id="{{item.groupon_rule_id}}"  class="click-btn">查看团购详情</a>
+            </p>
+        </div>
+        {{if item.groupon_status == 1}}
+            <div class="corner-group"></div>
+        {{/if}}
+        {{if item.groupon_status == 2}}
+            <div class="corner-group corner-group-sec"></div>
+        {{/if}}
+        {{if item.groupon_status == 3}}
+            <div class="corner-group corner-group-fail"></div>
+        {{/if}}
+    </li>
+    {{/each}}
+</ul>
+{{else}}
+<div class="my-list-no">
+    <div class="top">╮(╯3╰)╭<br> 还没抱过团，快去求抱叭</div>
+    <div class="btn-con">
+        <a href="{{'/src/groupon/group.html' | urlFn}}" class="btn-return">回团购首页</a>
+    </div>
+</div>
+{{/if}}

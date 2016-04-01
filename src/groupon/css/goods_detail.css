@@ -1,0 +1,90 @@
+.ol-numbe {
+  list-style-type: decimal;
+}
+.box-con {
+  background: #fff;
+  padding: 0.18rem .25rem;
+  margin-bottom: .1rem;
+}
+.box-con .head {
+  position: relative;
+  font-size: .25rem;
+  text-align: center;
+  margin-bottom: .16rem;
+}
+.box-con .head:after {
+  content: "";
+  position: absolute;
+  top: .12rem;
+  width: 100%;
+  height: 0;
+  left: 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+.box-con .head label {
+  position: relative;
+  z-index: 1;
+  background: #fff;
+  padding: 0 .2rem;
+}
+.box-con .body {
+  font-size: .185rem;
+}
+.box-con .body p {
+  text-indent: 2em;
+  margin-bottom: 1em;
+  line-height: 1.8em;
+}
+.rule .body ol {
+  padding-left: .25rem;
+}
+.rule .body ol li {
+  line-height: .27rem;
+  margin-bottom: .04rem;
+}
+.goods-detil .goods-info {
+  margin-bottom: .1rem;
+}
+.detil-body .img-ul {
+  padding-top: .12rem;
+  margin: 0rem -0.06rem;
+}
+.detil-body .img-ul:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.detil-body .img-ul li {
+  float: left;
+  width: 50%;
+  height: 2.58rem;
+  box-sizing: border-box;
+  padding: 0 .06rem;
+  margin-bottom: .12rem;
+}
+.detil-body .img-ul .img-box {
+  height: 100%;
+  width: 100%;
+  border: 1px solid #e5e5e5;
+}
+.detil-body .img-ul .img-box img {
+  height: 100%;
+  width: 100%;
+}
+.inline-help:after {
+  content: "?";
+  border: 0.01rem solid #ccc;
+  border-radius: 1rem;
+  /* padding: 0 .1rem; */
+  display: inline-block;
+  width: .22rem;
+  text-align: center;
+  font-size: .18rem;
+  line-height: .24rem;
+  height: .22rem;
+}
+.del-price {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: .22rem;
+}

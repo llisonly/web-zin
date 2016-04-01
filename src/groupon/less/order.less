@@ -1,0 +1,178 @@
+@baseColor: #fff;
+@borderColor: #efefef;
+body{
+    background:#fff;
+}
+.order-box{
+    background:#fff;
+    //padding-bottom:.9rem;
+    .form-data-ul{
+        padding-left:.2rem;
+        li{
+            border-bottom: .01rem solid #efefef;
+            padding:.12rem 0;
+        }
+        input[type=text],input[type=tel],input[data-type=text]{
+            height:.44rem;
+            width:100%;
+            border:0 none;
+        }
+        select{
+            border:.01rem solid #ddd;
+            height:.44rem;
+            max-width: 2rem;
+        }
+    }
+    .title-h3 {
+        background:#f6f5f7;
+        font-size: .22rem;
+        padding:.1rem .2rem;
+        line-height: .4rem;
+    }
+    .goods-de{
+        padding-left:.2rem;
+        li{
+            font-size: .22rem;
+            line-height: .32rem;
+            padding:.1rem .2rem .1rem 0;
+            border-bottom:1px solid @borderColor;
+            &:after{
+                content:"";
+                clear:both;
+                display: table;
+            }
+        }
+        .image{
+            float:left;
+            width:.92rem;
+            height:.92rem;
+            img{
+                width:100%;
+                height:100%;
+            }
+        }
+        .goods-infe{
+            padding-left:1.02rem;
+            .name{
+                color:#39383b;
+            }
+        }
+    }
+    .fastmail{
+        font-size: .22rem;
+        padding: .2rem;
+        line-height: .3rem;
+    }
+    .pay-select{
+        .title-top{
+            background:#fff;
+        }
+        .ul-list{
+            padding-left:.20rem;
+            li{
+                padding:.14rem 0;
+                height:.76rem; 
+                border-bottom: 1px solid @borderColor;
+                box-sizing: border-box;
+
+                label{
+                    display:block;
+                    input[type=radio]{
+                        display: none;
+                    }
+                    .icon-radio{
+                        float:left;
+                        margin-top:.1rem;
+                        height:.3rem;
+                        width:.32rem;
+                        background:url("../images/icon/icon-radio.png") no-repeat center center;
+                        background-size: 98% 100%;
+                    }
+                    input:checked + i.icon-radio{
+                        background-image:url("../images/icon/icon-radioed.png");
+                    }
+                    &:after{
+                        content:"";
+                        clear:both;
+                        display:table;
+                    }
+                    .text{
+                        overflow: hidden;
+                        padding-left: .14rem;
+                        p{
+                            padding-left:.56rem;
+                        }
+                        .h3{
+                            font-size:.22rem;
+                            color:#39383b;
+                        }
+                        .tips{
+                            font-size: .19rem;
+                        }
+                    }
+                    .icon-pay{
+                        float:left;
+                        height:.48rem;
+                        width:.48rem;
+                        background: no-repeat center center;
+                        background-size: 100% 100%;
+                    }
+                    .icon-pay-ali,.icon-appalipay{
+                        background-image: url("../images/icon/ali.png");
+                    }
+                    .icon-pay-wx,.icon-wxpay{
+                        background-image: url("../images/icon/weixin.png");
+                    }
+                    .icon-pay-caifu,.icon-tenpay{
+                        background-image: url("../images/icon/caifu.png");
+                    }
+                    .icon-pay-nongye,.icon-abcpay{
+                        background-image: url("../images/icon/nongye.png");
+                    }
+                    .icon-pay-yinlian,.icon-unipay{
+                        background-image: url("../images/icon/yinlian.png");
+                    }
+                    .icon-pay-xinyongka,.icon-tenpay_credit{
+                        background-image: url("../images/icon/xinyonka.png");
+                    }
+                }
+            }
+        }
+    }
+}
+.order-button-wrap{
+    height:.78rem;
+    bottom:0;
+    width:100%;
+    background:#fff;
+    border-top:1px solid #e5e5e5;
+    margin-top: .12rem;
+    .order-button-box{
+        box-sizing: border-box;
+        height:.78rem;
+        max-width:640px;
+
+        margin: 0 auto;
+        .text{
+            padding:.2rem;
+            font-size: .2rem;
+            line-height: .36rem;
+            .cRed{
+                font-size: .26rem;
+            }
+        }
+        .button{
+            height:100%;
+        }
+        .order-btn{
+            box-sizing: border-box;
+            height: .78rem;
+            float:right;
+            padding:0 .2rem;
+            background:#af5bbf;
+            font-size: .26rem;
+            line-height: .78rem;
+            color:#fff;
+        }
+    }
+}

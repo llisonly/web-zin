@@ -1,0 +1,76 @@
+.main {
+  line-height: 1.6em;
+  font-size: 14px;
+}
+.content {
+  padding: 20px;
+  position: relative;
+}
+.content:before {
+  content: " ";
+  position: absolute;
+  left: 14px;
+  top: 0;
+  bottom: 0;
+  border-left: 0.04rem solid #ff3366;
+}
+.content .title {
+  color: #ff3366;
+  font-size: 18px;
+  line-height: 1.6em;
+}
+.content .title:before {
+  float: left;
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  top: 9px;
+  position: relative;
+  left: -9px;
+  background: #ff3366;
+}
+.content .con {
+  padding: .1rem 0 .1rem .1rem;
+}
+.content .con div[class^="img"] {
+  margin-bottom: .1rem;
+}
+.content .con .img1 {
+  display: block;
+  height: 2.4rem;
+  background: url(../images/help/1.png) no-repeat center center;
+  background-size: 100% 100%;
+}
+.content .con .img2 {
+  display: block;
+  height: 2.1rem;
+  background: url(../images/help/2.png) no-repeat center center;
+  background-size: 100% 100%;
+}
+.content .con .img3 {
+  display: block;
+  height: 2.2rem;
+  background: url(../images/help/3.png) no-repeat center center;
+  background-size: 100% 100%;
+}
+.content .con .img4 {
+  display: block;
+  height: 2.2rem;
+  background: url(../images/help/4.png) no-repeat center center;
+  background-size: 100% 100%;
+}
+.content .con .img5 {
+  display: block;
+  height: 2.18rem;
+  background: url(../images/help/5.png) no-repeat center center;
+  background-size: 100% 100%;
+}
+.con-bottom {
+  border-top: 1px solid #ccc;
+  background: #fff;
+  padding: .2rem;
+}
+.con-bottom p {
+  margin-bottom: .1rem;
+}
